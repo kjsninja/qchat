@@ -9,7 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { ChatPage } from '../pages/chat/chat';
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     MyApp,
     HomePage,
     ChatPage
