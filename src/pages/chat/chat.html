@@ -7,19 +7,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-row>
+    <ion-row class="flex-container">
     
     <ion-title>Chat</ion-title>
     
-    <ion-col class="no-mar-pad" col-2>
+    
       <button ion-button clear>
         <ion-icon color="semi-light" name="attach">
         </ion-icon>
       </button>
-    </ion-col>
+    
     </ion-row>
   </ion-navbar>
-
 </ion-header>
 <ion-content>
 <div class="direct-chat-messages chat">
@@ -43,7 +42,7 @@
   </div>
   <div class="direct-chat-msg">
       <img class="direct-chat-img" src="../../assets/img/chassi-iconV2.png"/>
-      <div class="direct-chat-text">
+      <div>
               <img class="direct-chat-img-sent" src="../../assets/img/image sample.jpg"/>
       </div>
   </div>
@@ -77,12 +76,18 @@
       <ion-list class="no-mar-pad">
         <ion-grid class="no-mar-pad">
           <ion-row class="no-mar-pad">
-            <ion-col class="no-mar-pad" col-10>
+            <ion-col class="no-mar-pad" col-8>
               <ion-input type="text" placeholder="Type a message here..." value="" style="font-size:13px; padding-left:15px;">
               </ion-input>
             </ion-col>
             <ion-col class="no-mar-pad" col-2>
-              <button class="no-mar-pad" ion-button  clear style="padding:20px;margin-top:px;">
+              <button class="no-mar-pad" ion-button  clear style="padding:20px;">
+                <ion-icon name="microphone">
+                </ion-icon>
+              </button>
+            </ion-col>
+            <ion-col class="no-mar-pad" col-2>
+              <button class="no-mar-pad" ion-button  clear style="padding:20px;">
                 <ion-icon name="send">
                 </ion-icon>
               </button>
