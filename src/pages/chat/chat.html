@@ -7,12 +7,94 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-row class="flex-container">
+    
     <ion-title>Chat</ion-title>
+    
+    
+      <button ion-button clear>
+        <ion-icon color="semi-light" name="attach">
+        </ion-icon>
+      </button>
+    
+    </ion-row>
   </ion-navbar>
-
 </ion-header>
-
-
-<ion-content padding>
-
+<ion-content>
+<div class="direct-chat-messages chat">
+  <div class="direct-chat-msg right">
+      <img class="direct-chat-img" src="../../assets/img/User.jpg"/>
+      <div class="direct-chat-text user">
+              <p class="max-width">I would Like to make an Inquiry on my credit balancssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssse</p>
+      </div>
+  </div>
+  <div class="direct-chat-msg">
+      <img class="direct-chat-img" src="../../assets/img/chassi-iconV2.png"/>
+      <div class="direct-chat-text">
+              <p class="max-width">Hi there,[[User's name here]]</p>
+      </div>
+  </div>
+  <div class="direct-chat-msg">
+      <img class="direct-chat-img" src="../../assets/img/User.jpg"/>
+      <div class="direct-chat-text">
+              <p class="max-width">Sure thing give me a sec. :)</p>
+      </div>
+  </div>
+  <div class="direct-chat-msg">
+      <img class="direct-chat-img" src="../../assets/img/chassi-iconV2.png"/>
+      <div>
+              <img class="direct-chat-img-sent" src="../../assets/img/image sample.jpg"/>
+      </div>
+  </div>
+  <div class="direct-chat-msg right">
+      <img class="direct-chat-img" src="../../assets/img/User.jpg"/>
+      <div class="direct-chat-text user">
+              <p class="max-width">Thanks for the Info Chassi!</p>
+      </div>
+  </div>
+  <div class="direct-chat-msg">
+      <img class="direct-chat-img" src="../../assets/img/chassi-iconV2.png"/>
+      <div class="direct-chat-text">
+              <p class="max-width">No problem [[USER'S NAME HERE]] you can ask me anytime</p>
+      </div>
+  </div>
+  <div class="direct-chat-msg right">
+      <img class="direct-chat-img" src="../../assets/img/User.jpg"/>
+      <div class="direct-chat-text user">
+              <p class="max-width">Bye Chassi ~</p>
+      </div>
+  </div>
+  <div class="direct-chat-msg">
+      <img class="direct-chat-img" src="../../assets/img/chassi-iconV2.png"/>
+      <div class="direct-chat-text">
+              <p class="max-width">Take care [[USER'S NAME HERE]]</p>
+      </div>
+  </div>
+</div>
 </ion-content>
+<ion-footer height="inherit">
+      <ion-list class="no-mar-pad">
+        <ion-grid class="no-mar-pad">
+          <ion-row class="no-mar-pad">
+            <ion-col class="no-mar-pad" col-8>
+              <ion-input type="text" placeholder="Type a message here..." value="" style="font-size:13px; padding-left:15px;">
+              </ion-input>
+            </ion-col>
+            <ion-col class="no-mar-pad" col-2>
+              <button class="no-mar-pad" ion-button  clear style="padding:20px;">
+                <ion-icon name="microphone" color="semi-light">
+                </ion-icon>
+              </button>
+            </ion-col>
+            <ion-col class="no-mar-pad" col-2>
+              <button class="no-mar-pad" ion-button  clear style="padding:20px;">
+                <ion-icon name="send">
+                </ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+    </ion-footer> 
+
+
