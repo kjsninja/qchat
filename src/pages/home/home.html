@@ -1,15 +1,10 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title (click)="goToChatPage()">
-      Ionic
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content class="no-mar-pad">
+  <div class="center" style="background-color:coral;height:150px;width:150px;border-radius:100%; border:none;">
+  <p style="font-size:50px; text-align:center;line-height:150px;" (click)="goToChatPage()">L</p>
+  </div>
   <ion-row>
-  <ion-col col-10>
-  <ion-list class="flex-center">
+  <ion-col col-10 class="center" style="margin-top:15%;">
+  <ion-list>
 
   <ion-item>
     <ion-label floating>Username</ion-label>
@@ -22,7 +17,8 @@
   </ion-item>
 
 </ion-list>
-<button ion-button block>Block Button</button>
+<button ion-button block color="chat-color">Login</button>
+<a style="font-style:italic;">forgot your password?</a>
   </ion-col>
   </ion-row>
 </ion-content>

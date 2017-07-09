@@ -2,9 +2,7 @@
     padding:0;
     margin:0;
 }
-.flex-center {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: center;
-    justify-content: center;
+.center {
+    display: block;
+    margin:  auto;
 }
