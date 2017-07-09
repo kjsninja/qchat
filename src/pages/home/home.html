@@ -1,24 +1,23 @@
 <ion-content class="no-mar-pad">
   <div class="center" style="background-color:coral;height:150px;width:150px;border-radius:100%; border:none;">
-  <p style="font-size:50px; text-align:center;line-height:150px;" (click)="goToChatPage()">L</p>
+    <p style="font-size:50px; text-align:center;line-height:150px;" (click)="goToChatPage()">L</p>
   </div>
   <ion-row>
-  <ion-col col-10 class="center" style="margin-top:15%;">
-  <ion-list>
-
-  <ion-item>
-    <ion-label floating>Username</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input type="password"></ion-input>
-  </ion-item>
-
-</ion-list>
-<button ion-button block color="chat-color">Login</button>
-<a style="font-style:italic;">forgot your password?</a>
-  </ion-col>
+    <ion-col col-10 class="center" style="margin-top:15%;">
+      <form (ngSubmit)="logForm()">
+        <ion-list no-line>
+          <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input required name="username" id="username"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input required name="password" id="password"></ion-input>
+          </ion-item>
+        </ion-list>
+        <button ion-button block type="submit" color="chat-color">Login</button>
+        <a style="font-style:italic;">forgot your password?</a>
+      </form>
+    </ion-col>
   </ion-row>
 </ion-content>
