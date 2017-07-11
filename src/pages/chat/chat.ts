@@ -24,9 +24,11 @@ export class ChatPage {
               public alertCtrl: AlertController,
               public loginService: LoginServiceProvider) {
     var data = navParams.get("data").data;
-    var username = data.name;
+    var type = navParams.get("type");
 
-    this.chats.push({"type":"bot", "message":"Hi there, " + username + "."});
+    var name = data.name;
+
+    this.chats.push({"type":"bot", "message":"Hi there, " + name + ". Ask me anything about " + type + "."});
   }
 
   ionViewDidLoad() {

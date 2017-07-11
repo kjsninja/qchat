@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
-import { ChatPage } from '../../pages/chat/chat';
+import { DashboardPage } from '../../pages/dashboard/dashboard';
 
 import { LoginServiceProvider } from '../../providers/login-service/login-service';
 
@@ -25,7 +25,7 @@ export class HomePage {
       data => {
         var res = data.json();
         if(res.status == 0) {
-          this.navCtrl.push(ChatPage, {
+          this.navCtrl.push(DashboardPage, {
             data: res
           });
         } else {

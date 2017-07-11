@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ChatPage } from '../pages/chat/chat';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 import { LoginServiceProvider } from '../providers/login-service/login-service';
 
 import { HttpModule } from '@angular/http';
@@ -15,7 +16,8 @@ import { HttpModule } from '@angular/http';
   declarations: [ 
     MyApp,
     HomePage,
-    ChatPage
+    ChatPage,
+    DashboardPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { HttpModule } from '@angular/http';
   entryComponents: [
     MyApp,
     HomePage,
-    ChatPage
+    ChatPage,
+    DashboardPage
   ],
   providers: [
     StatusBar,
