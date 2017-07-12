@@ -24,7 +24,7 @@
 <div class="direct-chat-messages chat">
     <div *ngFor="let chat of chats">
       <div class="direct-chat-msg{{ chat.type == 'user' ? ' right': '' }}">
-          <img class="direct-chat-img" src="../../assets/img/{{ chat.type == 'user' ? 'User.jpg': 'chassi-iconV2.png' }}"/>
+          <img class="direct-chat-img" src="../../assets/icon/{{ chat.type == 'user' ? 'user.png': 'Qchat.png' }}"/>
           <div class="direct-chat-text{{ chat.type == 'user' ? ' user': '' }}">
             <p class="max-width">{{ chat.message }}</p>
           </div>
