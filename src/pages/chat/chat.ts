@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController, Content } from 'ionic-angular';
 
 import { LoginServiceProvider } from '../../providers/login-service/login-service';
 
@@ -16,6 +16,8 @@ import { LoginServiceProvider } from '../../providers/login-service/login-servic
   providers: [LoginServiceProvider]
 })
 export class ChatPage {
+  @ViewChild(Content) content: Content;
+
   public chats = [];
   public chat_content;
   public watson_payload = null;
@@ -55,6 +57,7 @@ export class ChatPage {
   sendChat() {
     if(this.chat_content){
       this.chats.push({"type":"user", "message":this.chat_content});
+      this.scrollToBottom();
       this.watson_payload.card.no = this.user_data.account_no;
       this.watson_payload.mobile = true;
       var chat_data = {
@@ -76,6 +79,7 @@ export class ChatPage {
                 message: res.output.text[i]
               })
             , 300);
+            this.scrollToBottom();
           }
         },
         err => {
@@ -99,4 +103,13 @@ export class ChatPage {
     this.chat_content = "";
   }
 
+    ionViewWillEnter(): void {
+        this.scrollToBottom();
+    }
+
+    scrollToBottom() {
+        setTimeout(() => {
+            this.content.scrollToBottom();
+        });
+    }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, LoadingController } from 'ionic-angular';
 
 import { DashboardPage } from '../../pages/dashboard/dashboard';
 
@@ -16,13 +16,20 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
               public alertCtrl: AlertController,
-              public loginService: LoginServiceProvider) {
-    
+              public loginService: LoginServiceProvider,
+              public loadingCtrl: LoadingController) {
   }
 
   login() {
+    let loading = this.loadingCtrl.create({
+      spinner: 'crescent',
+      content: 'Logging in... Please Wait...'
+    });
+    loading.present();
+    
     this.loginService.login(this.username, this.password).subscribe(
       data => {
+        loading.dismiss();
         if(data["_body"]){
           var res = data.json();
           if(res instanceof Object) {
@@ -47,6 +54,7 @@ export class HomePage {
         }
       },
       err => {
+        loading.dismiss();
         let alert = this.alertCtrl.create({
           title: 'Error',
           subTitle: "There is an error in your request. Please try again.",

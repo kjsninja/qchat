@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams , AlertController } from 'ionic-angular';
 
 import { ChatPage } from '../../pages/chat/chat';
+import { HomePage } from '../../pages/home/home';
 
 /**
  * Generated class for the DashboardPage page.
@@ -38,6 +39,10 @@ export class DashboardPage {
         data: this.navParams.get("data")
       });
     }
+  }
+
+  logout() {
+    this.navCtrl.pop(HomePage);
   }
 
   ionViewDidLoad() {
