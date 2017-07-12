@@ -37,7 +37,7 @@
         <ion-grid class="no-mar-pad">
           <ion-row class="no-mar-pad">
             <ion-col class="no-mar-pad" col-8>
-              <ion-input type="text" placeholder="Type a message here..." value="" style="font-size:13px; padding-left:15px;" [(ngModel)]="chat_content">
+              <ion-input type="text" placeholder="Type a message here..." value="" style="font-size:13px; padding-left:15px;" (keyup.enter)="sendChat()" [(ngModel)]="chat_content">
               </ion-input>
             </ion-col>
             <ion-col class="no-mar-pad" col-2>

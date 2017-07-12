@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class LoginServiceProvider {
-
+  public server_url = "https://chinabank.mybluemix.net/";
   constructor(public http: Http) {
     console.log('Hello LoginServiceProvider Provider');
   }
@@ -21,16 +21,13 @@ export class LoginServiceProvider {
       password: password
     };
 
-    let json = this.http.post("http://192.168.56.1:6008/login/dummy", JSON.stringify(data));
+    let json = this.http.post(this.server_url + "account/login", JSON.stringify(data));
     return json;
   }
 
   chat(content) {
-    var data = {
-      content: content
-    };
 
-    let json = this.http.post("http://192.168.56.1:6008/chat/dummy", JSON.stringify(data));
+    let json = this.http.post(this.server_url + "api/message", content);
     return json;
   }
 }

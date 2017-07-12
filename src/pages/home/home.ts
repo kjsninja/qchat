@@ -23,24 +23,33 @@ export class HomePage {
   login() {
     this.loginService.login(this.username, this.password).subscribe(
       data => {
-        var res = data.json();
-        if(res.status == 0) {
-          this.navCtrl.push(DashboardPage, {
-            data: res
-          });
-        } else {
+        if(data["_body"]){
+          var res = data.json();
+          if(res instanceof Object) {
+            this.navCtrl.push(DashboardPage, {
+              data: res
+            });
+          } else {
+            let alert = this.alertCtrl.create({
+              title: "Login Failed",
+              subTitle: "Invalid username/password",
+              buttons: ['OK']
+            });
+            alert.present();          
+          } 
+        }else{
           let alert = this.alertCtrl.create({
             title: "Login Failed",
-            subTitle: res.message,
+            subTitle: "Invalid username/password",
             buttons: ['OK']
           });
-          alert.present();          
+          alert.present();    
         }
       },
       err => {
         let alert = this.alertCtrl.create({
           title: 'Error',
-          subTitle: err,
+          subTitle: "There is an error in your request. Please try again.",
           buttons: ['OK']
         });
         alert.present();

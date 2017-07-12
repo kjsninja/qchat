@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , AlertController } from 'ionic-angular';
 
 import { ChatPage } from '../../pages/chat/chat';
 
@@ -17,7 +17,7 @@ import { ChatPage } from '../../pages/chat/chat';
 export class DashboardPage {
   public types = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams) {
 
     this.types.push({"code":"FINANCE", "image":"financial.png", "content":"Financial Talk"});
     this.types.push({"code":"MEDICAL", "image":"Medical.png", "content":"Medical Consulation"});
@@ -25,10 +25,19 @@ export class DashboardPage {
   }
 
   openChat(code) {
-    this.navCtrl.push(ChatPage, {
-      type: code,
-      data: this.navParams.get("data")
-    });
+    if(code != "FINANCE"){
+      let alert = this.alertCtrl.create({
+        title: 'Under Construction',
+        subTitle: 'This service is under construction.',
+        buttons: ['OK']
+      });
+      alert.present();
+    }else{
+      this.navCtrl.push(ChatPage, {
+        type: code,
+        data: this.navParams.get("data")
+      });
+    }
   }
 
   ionViewDidLoad() {
