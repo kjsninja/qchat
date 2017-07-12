@@ -57,7 +57,7 @@ export class HomePage {
         loading.dismiss();
         let alert = this.alertCtrl.create({
           title: 'Error',
-          subTitle: "There is an error in your request. Please try again.",
+          subTitle: "There is an error in your request. Please try again. Error: " + err,
           buttons: ['OK']
         });
         alert.present();
